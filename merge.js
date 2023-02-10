@@ -8,7 +8,7 @@
 function merge(arr1, arr2) {
   if (arr1.length === 0 && arr2.length === 0) return [];
 
-  let out = []
+  let out = [];
 
   let i = 0;
   let j = 0;
@@ -44,6 +44,19 @@ function merge(arr1, arr2) {
  * @returns: Sorted Array of values
  */
 
-function mergeSort(values) {}
+function mergeSort(values) {
 
-module.exports = { merge, mergeSort};
+  if (values.length <= 1) return values;
+
+  const midIdx = Math.floor(values.length / 2);
+
+  const arr1 = values.slice(0, midIdx);
+  const sortedArray1 = mergeSort(arr1);
+
+  const arr2 = values.slice(midIdx, values.length);
+  const sortedArray2 = mergeSort(arr2);
+
+  return merge(sortedArray1, sortedArray2);
+}
+
+module.exports = { merge, mergeSort };
