@@ -1,3 +1,9 @@
+/** Sort provided array of values using bubble sort and return new sorted array
+ *
+ * @param {Array} values: Values to sort
+ * @returns: Sorted Array
+ */
+
 function bubbleSort(values) {
 
   if (values.length <= 1) return values;
